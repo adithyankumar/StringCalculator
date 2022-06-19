@@ -1,5 +1,6 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 class StringCalculatorTest {
 
@@ -13,21 +14,21 @@ class StringCalculatorTest {
     }
 
     @Test
-    fun `pass 1 as input string then return 1`() {
+    fun `pass one number as input string then return sum`() {
         val inputStr = "1"
         val expected = 1
         assertEquals(expected , stringCalculator.add(inputStr))
     }
 
     @Test
-    fun `pass 1,2 as input string then return 3`() {
+    fun `pass two number as input string then return sum`() {
         val inputStr = "1,2"
         val expected = 3
         assertEquals(expected , stringCalculator.add(inputStr))
     }
 
     @Test
-    fun `allow the Add method to handle new lines between numbers`() {
+    fun `allow the add method to handle new lines between numbers then return sum`() {
         val inputStr = "1\n2,3"
         val expected = 6
         assertEquals(expected , stringCalculator.add(inputStr))
@@ -38,6 +39,14 @@ class StringCalculatorTest {
         val inputStr = "//;\n1;2"
         val expected = 3
         assertEquals(expected , stringCalculator.add(inputStr))
+    }
+
+    @Test
+    fun `calling add with a negative number then throws Exception`() {
+        assertFailsWith<Exception> {
+            val inputStr = "//;\n-1;2"
+            stringCalculator.add(inputStr)
+        }
     }
 
 }

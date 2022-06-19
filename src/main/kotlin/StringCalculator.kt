@@ -17,11 +17,20 @@ class StringCalculator {
 
             var sum = 0
             val splitArray = newInput.split(delimiters)
+            var isNegativeNumberFound = false
             for (operandStr in splitArray){
                 if (operandStr != "") {
                     val operand = operandStr.toInt()
-                    sum += operand
+                    if( operand > 0 ) {
+                        sum += operand
+                    }else{
+                        isNegativeNumberFound = true
+                        println("$operand not allowed")
+                    }
                 }
+            }
+            if (isNegativeNumberFound){
+                throw Exception("negatives not allowed")
             }
             return  sum
         }
@@ -30,6 +39,6 @@ class StringCalculator {
 }
 fun main(args : Array<String>){
     val stringCalculator = StringCalculator()
-    println("Sum = ${stringCalculator.add("//;\n1;2")}")
+    println("Sum = ${stringCalculator.add("//;\n-1;2")}")
 }
 
