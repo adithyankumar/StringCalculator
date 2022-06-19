@@ -63,4 +63,11 @@ class StringCalculatorTest {
         assertEquals(expected , stringCalculator.add(inputStr))
     }
 
+    @Test
+    fun `allow multiple delimiters but should be ignored then return sum`() {
+        val inputStr = "//[*][%]\n1*2%3"
+        val expected = 6
+        assertEquals(expected , stringCalculator.add(inputStr))
+    }
+
 }

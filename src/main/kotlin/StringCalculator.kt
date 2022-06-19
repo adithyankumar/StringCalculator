@@ -4,7 +4,7 @@ class StringCalculator {
             val defaultDelimiter: String
             val startingDelimiter ="//"
             val whiteSpaceChar ="\n"
-            val delimiters = "[*]"
+            val delimiters = "[*%]"
             var newInput : String
             if (input.length > 2 && input.substring(0,2) == startingDelimiter){
                 defaultDelimiter =  ";"
@@ -44,6 +44,6 @@ class StringCalculator {
 }
 fun main(args : Array<String>){
     val stringCalculator = StringCalculator()
-    println("Sum = ${stringCalculator.add("//[***]\n1***2***3")}")
+    println("Sum = ${stringCalculator.add("//[*][%]\n1*2%3")}")
 }
 
