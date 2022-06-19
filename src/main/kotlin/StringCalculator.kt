@@ -21,9 +21,9 @@ class StringCalculator {
             for (operandStr in splitArray){
                 if (operandStr != "") {
                     val operand = operandStr.toInt()
-                    if( operand > 0 ) {
+                    if(operand in 1..1000) {
                         sum += operand
-                    }else{
+                    }else if(operand < 0){
                         isNegativeNumberFound = true
                         println("$operand not allowed")
                     }
@@ -39,6 +39,6 @@ class StringCalculator {
 }
 fun main(args : Array<String>){
     val stringCalculator = StringCalculator()
-    println("Sum = ${stringCalculator.add("//;\n-1;2")}")
+    println("Sum = ${stringCalculator.add("//;\n1000;2;1")}")
 }
 

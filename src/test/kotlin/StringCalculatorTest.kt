@@ -49,4 +49,11 @@ class StringCalculatorTest {
         }
     }
 
+    @Test
+    fun `numbers bigger than 1000 should be ignored then return sum`() {
+        val inputStr = "//;\n1001;2"
+        val expected = 2
+        assertEquals(expected , stringCalculator.add(inputStr))
+    }
+
 }
