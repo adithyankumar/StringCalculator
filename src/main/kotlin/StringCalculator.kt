@@ -1,25 +1,30 @@
 class StringCalculator {
     fun add(input : String) : Int{
         if (input.isNotEmpty()){
-            val delimiters: String
+            val defaultDelimiter: String
             val startingDelimiter ="//"
             val whiteSpaceChar ="\n"
+            val delimiters = "[*]"
             var newInput : String
             if (input.length > 2 && input.substring(0,2) == startingDelimiter){
-                delimiters =  ";"
+                defaultDelimiter =  ";"
                 newInput = input.replace(startingDelimiter,"")
-                newInput = newInput.replace(whiteSpaceChar, delimiters)
+                newInput = newInput.replace(whiteSpaceChar, defaultDelimiter)
+                newInput = newInput.replace("[", "")
+                newInput = newInput.replace("]", "")
+                newInput = newInput.replace(delimiters.toRegex(), defaultDelimiter)
+
             }
             else{
-                delimiters =  ","
-                newInput = input.replace(whiteSpaceChar, delimiters)
+                defaultDelimiter =  ","
+                newInput = input.replace(whiteSpaceChar, defaultDelimiter)
             }
 
             var sum = 0
-            val splitArray = newInput.split(delimiters)
+            val splitArray = newInput.split(defaultDelimiter)
             var isNegativeNumberFound = false
             for (operandStr in splitArray){
-                if (operandStr != "") {
+                if (operandStr.isNotEmpty()) {
                     val operand = operandStr.toInt()
                     if(operand in 1..1000) {
                         sum += operand
@@ -39,6 +44,6 @@ class StringCalculator {
 }
 fun main(args : Array<String>){
     val stringCalculator = StringCalculator()
-    println("Sum = ${stringCalculator.add("//;\n1000;2;1")}")
+    println("Sum = ${stringCalculator.add("//[***]\n1***2***3")}")
 }
 
