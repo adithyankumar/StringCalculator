@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="StringCalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-19T12:33:14" hostname="DESKTOP-1M7TSHM" time="0.065">
+  <properties/>
+  <testcase name="pass 1,2 as input string then return 3()" classname="StringCalculatorTest" time="0.058"/>
+  <testcase name="pass 1 as input string then return 1()" classname="StringCalculatorTest" time="0.001"/>
+  <testcase name="pass empty input string then return 0()" classname="StringCalculatorTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
