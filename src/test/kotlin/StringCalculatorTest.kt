@@ -70,4 +70,12 @@ class StringCalculatorTest {
         assertEquals(expected , stringCalculator.add(inputStr))
     }
 
+
+    @Test
+    fun `allow multiple delimiters with length longer than one char but should be ignored then return sum`() {
+        val inputStr = "//[****][%***]\n1****%*\n2%%%%%%3"
+        val expected = 6
+        assertEquals(expected , stringCalculator.add(inputStr))
+    }
+
 }

@@ -44,6 +44,6 @@ class StringCalculator {
 }
 fun main(args : Array<String>){
     val stringCalculator = StringCalculator()
-    println("Sum = ${stringCalculator.add("//[*][%]\n1*2%3")}")
+    println("Sum = ${stringCalculator.add("//[****][%***]\n1****%*\n2%%%%%%3")}")
 }
 
