@@ -25,4 +25,11 @@ class StringCalculatorTest {
         val expected = 3
         assertEquals(expected , stringCalculator.add(inputStr))
     }
+
+    @Test
+    fun `pass 1 newline 2,3 as input string then return 6`() {
+        val inputStr = "1\n2,3"
+        val expected = 6
+        assertEquals(expected , stringCalculator.add(inputStr))
+    }
 }
