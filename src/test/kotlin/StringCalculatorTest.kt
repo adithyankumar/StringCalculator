@@ -27,9 +27,17 @@ class StringCalculatorTest {
     }
 
     @Test
-    fun `pass 1 newline 2,3 as input string then return 6`() {
+    fun `allow the Add method to handle new lines between numbers`() {
         val inputStr = "1\n2,3"
         val expected = 6
         assertEquals(expected , stringCalculator.add(inputStr))
     }
+
+    @Test
+    fun `support different delimiters`() {
+        val inputStr = "//;\n1;2"
+        val expected = 3
+        assertEquals(expected , stringCalculator.add(inputStr))
+    }
+
 }
